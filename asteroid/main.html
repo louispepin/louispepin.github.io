@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Asteroid</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="asteroid.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="logo">
+            <a href="main.html"><img src="../polytechnique.png" width="100" height="100" /></a>
+        </div>
+        <div id="container">
+            <div id="header">
+                <h1>HOME</h1>
+            </div>
+            <div id="menu">
+                <hr />
+                <table id="menu_table" border="0">
+                    <tr>
+                        <td><a id="menu_item" href="../main.html">HOME</a></td>
+                        <td id="seperator">|</td>
+                        <td><a id="menu_item" href="../snake/main.html">SNAKE</a></td>
+                        <td id="seperator">|</td>
+                        <td><a id="menu_item" href="main.html">ASTEROID</a></td>
+                        <td id="seperator">|</td>
+                        <td><a id="menu_item" href="../todo.html">TODO</a></td>
+                    </tr>
+                </table>
+                <hr />
+            </div>
+                <div id="content">
+                    <canvas id="asteroid_board" width="500" height="500" onclick="start()"></canvas>
+                    <h3>RULES</h3>
+                    <p>
+                        You are the commander of a spaceship lost in the asteroid belt. You must
+                        defend yourself and your crew against these gigantic rocks if you are to
+                        ever see your friends and family again. Don't let them drop your lives to
+                        zero!<br><br>
+                        <b>ADVENTURE: </b> You begin at level 1. Each level has an increasing number of asteroids
+                        with increasing speed. Live long enough and you just might get a bonus!<br><br>
+                        <b>SURVIVAL: </b> There are no levels. There is only you and a shit ton of
+                        sharp looking rocks. Survive as long as you can! You shall not be forgotten.<br>
+                    </p>
+                    <h3><br />CONTROLS</h3>
+                    <p>
+                        Right: L <br>
+                        Left: H <br>
+                        Jump: Space <br>
+                        Pause/Unpause: P <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

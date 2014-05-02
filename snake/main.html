@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Snake</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="snake.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="logo">
+            <a href="main.html"><img src="../polytechnique.png" width="100" height="100" /></a>
+        </div>
+        <div id="container">
+            <div id="header">
+                <h1>HOME</h1>
+            </div>
+            <div id="menu">
+                <hr />
+                <table id="menu_table" border="0">
+                    <tr>
+                        <td><a id="menu_item" href="../main.html">HOME</a></td>
+                        <td id="seperator">|</td>
+                        <td><a id="menu_item" href="main.html">SNAKE</a></td>
+                        <td id="seperator">|</td>
+                        <td><a id="menu_item" href="../asteroid/main.html">ASTEROID</a></td>
+                        <td id="seperator">|</td>
+                        <td><a id="menu_item" href="../todo.html">TODO</a></td>
+                    </tr>
+                </table>
+                <hr />
+            </div>
+                <div id="content">
+                    <canvas id="snake_board" width="500" height="500" onclick="start()"></canvas>
+                    <h3>RULES</h3>
+                    <p>
+                        Every time you eat an apple, you become a little longer.
+                        If you hit a wall or your own body, it's game over. How many apples can you
+                        get?
+                    </p>
+                    <h3>CONTROLS</h3>
+                    <p>
+                        Right: L <br>
+                        Left: H <br>
+                        Up: K <br>
+                        Down: J <br>
+                        Pause/Unpause: P <br>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+</body>
+</html>

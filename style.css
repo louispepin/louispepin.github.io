@@ -1,0 +1,91 @@
+body {
+    background-color: #ffffff;
+    font-family: "Josefin Slab";
+}
+
+h1,h2,h3,h4,h5 {
+	color: #5e0000;
+}
+
+td {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+hr {
+    border-style: none;
+    color: #aaaaaa;
+    background-color: #aaaaaa;
+    height: 1px;
+}
+
+#page {
+    width: 1000px;
+    margin-left: 75px;
+    margin-top: 25px;
+}
+
+#container {
+    width: 700px;
+    float: left;
+}
+
+#logo {
+	float: left;
+    margin-right: 40px;
+}
+
+#header {
+	width: 700px;
+	float: left;
+    text-align: center;
+	color: #404040;
+}
+
+#content {
+    padding: 10px;
+    width: 700px;
+    float: left;
+    text-align: left;
+	color: #404040;
+}
+
+#menu {
+    width: 700px;
+    padding: 10px;
+	float: left;
+}
+
+#menu_table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#menu_item {
+    text-decoration: none;
+    font-size: 12px;
+    color: #5e0000;
+}
+
+#menu_header {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#seperator {
+    color: #aaaaaa;
+}
+
+#snake_board {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+	margin-left: 90px;
+}
+
+#asteroid_board {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+	margin-left: 90px;
+}
