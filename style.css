@@ -19,35 +19,31 @@ hr {
     height: 1px;
 }
 
-#page {
-    width: 1000px;
-    margin-left: 75px;
-    margin-top: 25px;
+.page {
+    width: auto;
+    padding-top: 100px;
+    margin-left: auto;
+    margin-top: auto;
+    text-align: center;
+    border: 2px solid black;
 }
 
-#container {
-    width: 700px;
-    float: left;
-}
-
-#logo {
-	float: left;
-    margin-right: 40px;
-}
-
-#header {
-	width: 700px;
-	float: left;
+.header {
+	width: auto;
+	margin-left: 50px;
+	margin-right: 50px;
     text-align: center;
 	color: #404040;
+	border: 2px solid red;
 }
 
-#content {
-    padding: 10px;
-    width: 700px;
-    float: left;
+.content {
+    width: auto;
+    margin-left: 50px;
+	margin-right: 50px;
     text-align: left;
 	color: #404040;
+	border: 2px solid blue;
 }
 
 #menu {

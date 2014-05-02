@@ -2,35 +2,39 @@
 <head>
     <title>Me</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <div id="page">
-        <div id="logo">
-            <a href="main.html"><img src="polytechnique.png" width="100" height="100" /></a>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
         </div>
-        <div id="container">
-            <div id="header">
-                <h1>HOME</h1>
-            </div>
-            <div id="menu">
-                <hr />
-                <table id="menu_table" border="0">
-                    <tr>
-                        <td><a id="menu_item" href="main.html">HOME</a></td>
-                        <td id="seperator">|</td>
-                        <td><a id="menu_item" href="snake/main.html">SNAKE</a></td>
-                        <td id="seperator">|</td>
-                        <td><a id="menu_item" href="asteroid/main.html">ASTEROID</a></td>
-                        <td id="seperator">|</td>
-                        <td><a id="menu_item" href="todo.html">TODO</a></td>
-                    </tr>
-                </table>
-                <hr />
-            </div>
-                <div id="content">
-                    <h3>yolo</h3>
-                </div>
-            </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">Snake</a></li>
+            <li><a href="#contact">Asteroid</a></li>
+          </ul>
         </div>
+      </div>
+    </div>
+
+
+    <div id="container">
+        <div id="header">
+            <h1>HOME</h1>
+        </div>
+        <div id="content">
+            <h3>yolo</h3>
+        </div>
+    </div>
 </body>
 </html>
