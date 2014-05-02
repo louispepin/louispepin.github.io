@@ -1067,7 +1067,7 @@ window.onload = function () {
 	ctx.font = "50px droid sans";
 	ctx.fillText("ASTEROID",250,150);
 	ctx.font = "35px droid sans";
-	ctx.fillText("CLICK HERE",185,300);
+	ctx.fillText("CLICK",190,300);
 	ctx.fillText("TO PLAY",185,350);
 
 	play_img.onload = function () {
