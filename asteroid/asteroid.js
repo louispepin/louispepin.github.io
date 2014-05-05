@@ -44,13 +44,21 @@ var explosions = new Array;
 
 //Images
 var ship_img = new Image();
+var ship_array  = new Array;
+ship_array[0] = new Image();
+ship_array[1] = new Image();
+ship_array[2] = new Image();
+ship_array[3] = new Image();
 var asteroid_big_img = new Image();
 var asteroid_small_img = new Image();
 var arrow_img = new Image();
 var life_img = new Image();
 var explosion_img = new Image();
 
-ship_img.src = "images/ship_right.png";
+ship_array[0].src = "images/ship_left.png";
+ship_array[1].src = "images/ship_right.png";
+ship_array[2].src = "images/ship_up.png";
+ship_array[3].src = "images/ship_down.png";
 asteroid_big_img.src = "images/asteroid_big.png";
 asteroid_small_img.src = "images/asteroid_small.png";
 arrow_img.src = "images/arrow.png";
@@ -305,22 +313,23 @@ function draw() {
 	}
 
 	else {
+
 		//Background
 		ctx.fillStyle = "#ffffff";
 		ctx.fillRect(0,0,500,500);
 
 		//Ship with proper orientation
 		if (moving_left)
-			ship_img.src = "images/ship_left.png"		
+			ship_img = ship_array[0];
 
 		else if (moving_right)
-			ship_img.src = "images/ship_right.png";		
+			ship_img = ship_array[1];
 
 		else if (moving_up)
-			ship_img.src = "images/ship_up.png";		
+			ship_img = ship_array[2];
 		
 		else if (moving_down)
-			ship_img.src = "images/ship_down.png";		
+			ship_img = ship_array[3];
 
 	    //Bullets
 		ctx.fillStyle = "#ff0000";
@@ -752,15 +761,7 @@ function animate() {
 	}
 
 	draw();
-	
-	//Firefox and chrome support
-	if (!window.requestAnimationFrame) {
-		window.mozRequestAnimationFrame(animate);
-	}
-
-	else {
-		requestAnimationFrame(animate);
-	}
+	requestAnimationFrame(animate);
 }
 
 //Keyboard event handler
