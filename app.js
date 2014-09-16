@@ -10,6 +10,14 @@ angular.module('app', [
             templateUrl: 'dummy.html',
             controller: 'homeCtrl'
         })
+        .when('/snake', {
+            templateUrl: 'dummy.html',
+            controller: 'snakeCtrl'
+        })
+        .when('/asteroid', {
+            templateUrl: 'dummy.html',
+            controller: 'asteroidCtrl'
+        })
         .otherwise({
             redirectTo: '/home'
         });
