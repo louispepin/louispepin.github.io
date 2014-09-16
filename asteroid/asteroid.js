@@ -15,7 +15,6 @@ var asteroid_spawn_start;
 var cooldown_start;
 var cutscene_start;
 var powerup_start;
-var dead_start;
 
 //Counters
 var lives = 3;
