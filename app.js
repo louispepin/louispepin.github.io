@@ -7,15 +7,15 @@ angular.module('app', [
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/home', {
-            templateUrl: 'dummy.html',
+            templateUrl: 'modules/home/home.html',
             controller: 'homeCtrl'
         })
         .when('/snake', {
-            templateUrl: 'dummy.html',
+            templateUrl: 'modules/snake/snake.html',
             controller: 'snakeCtrl'
         })
         .when('/asteroid', {
-            templateUrl: 'dummy.html',
+            templateUrl: 'modules/asteroid/asteroid.html',
             controller: 'asteroidCtrl'
         })
         .otherwise({
