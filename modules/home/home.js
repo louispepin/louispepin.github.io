@@ -1,3 +1,5 @@
-/**
- * Created by Louis on 9/17/2014.
- */
+angular.module('home', [])
+.controller('homeCtrl', ['$scope', function($scope) {
+    $scope.text = "Home";
+}]);
+
