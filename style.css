@@ -1,5 +1,4 @@
 body {
-    background-color: #ffffff;
     font-family: "Droid Sans";
 }
 
@@ -28,26 +27,18 @@ p {
 }
 
 .page {
-    width: auto;
-    padding-top: 100px;
+    width: 1400px;
+    height: 1000px;
+    left: 50%;
     margin-left: auto;
-    margin-top: auto;
+    margin-right: auto;
     text-align: center;
-}
-
-.header {
-	width: auto;
-	margin-left: 50px;
-	margin-right: 50px;
-    text-align: center;
-	color: #404040;
+    background-color: white;
 }
 
 .content {
-    width: auto;
-    margin-left: 50px;
-	margin-right: 50px;
-	color: #404040;
+    margin: 30px;
+    padding-top: 60px;
 }
 
 #snake_board {

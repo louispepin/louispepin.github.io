@@ -14,8 +14,8 @@
         <script src="modules/asteroid/asteroid.js"></script>
 	</head>
 
-	<body ng-app="app">
-        <div class="navbar navbar-inverse" role="navigation">
+	<body ng-app="app" style="background-color: #aaaaaa">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-brand">Louis Pepin</div>
                 <div class="collapse navbar-collapse">
@@ -28,6 +28,7 @@
             </div>
         </div>
 
-        <div style="float: left" ng-view></div>
+        <div class="page" ng-view></div>
+
 	</body>
 </html>
