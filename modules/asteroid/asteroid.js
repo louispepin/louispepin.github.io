@@ -17,7 +17,7 @@ angular.module('asteroid', [])
         cutscene: false,
         dead: false,
         menu_selected: 0,
-        asteroid_speed: 2,
+        asteroid_speed: 4,
 
         // counters
         lives: 3,
@@ -137,23 +137,23 @@ angular.module('asteroid', [])
 
             switch ($scope.controls.ship_orientation) {
                 case "right":
-                    this.speedX_ = 4;
+                    this.speedX_ = 10;
                     this.speedY_ = 0;
                     break;
 
                 case "left":
-                    this.speedX_ = -4;
+                    this.speedX_ = -10;
                     this.speedY_ = 0;
                     break;
 
                 case "up":
                     this.speedX_ = 0;
-                    this.speedY_ = 4;
+                    this.speedY_ = 10;
                     break;
 
                 case "down":
                     this.speedX_ = 0;
-                    this.speedY_ = -4;
+                    this.speedY_ = -10;
                     break;
             }
 
@@ -381,7 +381,7 @@ angular.module('asteroid', [])
                 }
 
                 // lives
-                $scope.images.life_img.src = "images/ship_up.png";
+                $scope.images.life_img.src = "modules/asteroid/images/ship_up.png";
                 for (i=0; i<$scope.controls.lives; i++) {
                     $scope.canvas.ctx.drawImage($scope.images.life_img, 25*(18-i),5);
                 }
@@ -458,20 +458,20 @@ angular.module('asteroid', [])
 
             // set speed according to movement control variables
             if ($scope.controls.moving_right) {
-                $scope.player.speedX_ = 2;
+                $scope.player.speedX_ = 5;
                 $scope.player.speedY_ = 0;
             }
             else if ($scope.controls.moving_left) {
-                $scope.player.speedX_ = -2;
+                $scope.player.speedX_ = -5;
                 $scope.player.speedY_ = 0;
             }
             else if ($scope.controls.moving_up) {
                 $scope.player.speedX_ = 0;
-                $scope.player.speedY_ = 2;
+                $scope.player.speedY_ = 5;
             }
             else if ($scope.controls.moving_down) {
                 $scope.player.speedX_ = 0;
-                $scope.player.speedY_ = -2;
+                $scope.player.speedY_ = -5;
             }
             else {
                 $scope.player.speedX_ = 0;
@@ -678,13 +678,17 @@ angular.module('asteroid', [])
         },
 
         animate: function () {
-            if (!$scope.controls.pause) {
-                $scope.actions.update();
-                $scope.actions.collisions();
-            }
+            var now = new Date().getTime();
+            if (now - $scope.last_frame > 1000/60) {
+                if (!$scope.controls.pause) {
+                    $scope.actions.update();
+                    $scope.actions.collisions();
+                }
 
-            $scope.actions.draw();
-            requestAnimationFrame($scope.actions.animate);
+                $scope.actions.draw();
+                $scope.last_frame = now;
+            }
+            window.requestAnimationFrame($scope.actions.animate);
         },
 
         start: function () {
@@ -695,14 +699,8 @@ angular.module('asteroid', [])
                 $scope.actions.init();
                 $scope.controls.game_started = true;
 
-                //Firefox and chrome support
-                if (!window.requestAnimationFrame) {
-                    window.mozRequestAnimationFrame($scope.actions.animate);
-                }
-
-                else {
-                    requestAnimationFrame($scope.actions.animate);
-                }
+                window.requestAnimationFrame($scope.actions.animate);
+                $scope.last_frame = new Date().getTime();
             }
         }
     };
