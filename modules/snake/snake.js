@@ -1,5 +1,5 @@
 angular.module('snake', [])
-.controller('snakeCtrl', ['$scope', '$location', function($scope, $location) {
+.controller('snakeCtrl', ['$scope', function($scope) {
 
     $scope.canvas = {
         c: document.getElementById("snake_board"),
@@ -420,7 +420,21 @@ angular.module('snake', [])
                     //Remove the menu, kill the game loop and restart it with
                     //new game_speed value
                     $scope.controls.menu = false;
-                    $scope.controls.game_speed = 200 / ($scope.controls.menu_selected + 1);
+                    switch ($scope.controls.menu_selected) {
+                        case 0:
+                            $scope.controls.game_speed = 150;
+                            break;
+                        case 1:
+                            $scope.controls.game_speed = 100;
+                            break;
+                        case 2:
+                            $scope.controls.game_speed = 50;
+                            break;
+                        case 3:
+                            $scope.controls.game_speed = 30;
+                            break;
+                    }
+
                     clearInterval($scope.controls.interval_handle);
                     $scope.controls.interval_handle = setInterval(function () {
                         $scope.actions.update();
