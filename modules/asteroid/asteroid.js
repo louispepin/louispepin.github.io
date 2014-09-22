@@ -858,7 +858,7 @@ angular.module('asteroid', [])
                 if ($scope.controls.menu) {
                     // start the game
                     $scope.controls.menu = false;
-                    $scope.images.ship_img.src = "images/ship_up.png";
+                    $scope.images.ship_img.src = "modules/asteroid/images/ship_up.png";
 
                     // set the right game mode
                     if ($scope.controls.menu_selected == 1) {
