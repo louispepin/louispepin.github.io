@@ -266,7 +266,7 @@ angular.module('asteroid', [])
             else {
                 $scope.canvas.ctx.fillStyle = "#606060";
                 $scope.canvas.ctx.font = "35px Droid Sans";
-                $scope.canvas.ctx.fillText("YOU DIED AT $scope.controls.level ",250,225);
+                $scope.canvas.ctx.fillText("YOU DIED AT LEVEL",250,225);
                 $scope.canvas.ctx.fillStyle = "#303030";
                 $scope.canvas.ctx.fillText($scope.controls.level,250,275);
                 $scope.canvas.ctx.fillStyle = "#606060";
