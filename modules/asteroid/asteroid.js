@@ -1,12 +1,26 @@
 angular.module('asteroid', [])
-.controller('asteroidCtrl', ['$scope', function($scope) {
+.controller('asteroidCtrl', ['$scope', '$rootScope', '$modalInstance', function($scope, $rootScope, $modalInstance) {
 
-    $scope.canvas = {
-        c: document.getElementById("asteroid_board"),
-        ctx: null
-    };
+    $rootScope.$watch('asteroidModalReady', function () {
+        $scope.canvas = {
+            c: document.getElementById("asteroid_board"),
+            ctx: null
+        };
+        $scope.canvas.ctx = $scope.canvas.c.getContext("2d");
 
-    $scope.canvas.ctx = $scope.canvas.c.getContext("2d");
+        // draw default canvas
+        $scope.canvas.ctx.textAlign = "center";
+        $scope.canvas.ctx.fillStyle = "#303030";
+        $scope.canvas.ctx.font = "50px droid sans";
+        $scope.canvas.ctx.fillText("ASTEROID",250,150);
+        $scope.canvas.ctx.font = "35px droid sans";
+        $scope.canvas.ctx.fillText("CLICK",190,300);
+        $scope.canvas.ctx.fillText("TO PLAY",185,350);
+
+        $scope.images.play_img.onload = function () {
+            $scope.canvas.ctx.drawImage($scope.images.play_img,300,260);
+        }
+    });
 
     $scope.controls = {
         game_started: false,
@@ -79,19 +93,6 @@ angular.module('asteroid', [])
     $scope.images.life_img.src = "modules/asteroid/images/ship_up.png";
     $scope.images.explosion_img.src = "modules/asteroid/images/explosion.png";
     $scope.images.play_img.src = "modules/asteroid/images/play.png";
-
-    // draw default canvas
-    $scope.canvas.ctx.textAlign = "center";
-    $scope.canvas.ctx.fillStyle = "#303030";
-    $scope.canvas.ctx.font = "50px droid sans";
-    $scope.canvas.ctx.fillText("ASTEROID",250,150);
-    $scope.canvas.ctx.font = "35px droid sans";
-    $scope.canvas.ctx.fillText("CLICK",190,300);
-    $scope.canvas.ctx.fillText("TO PLAY",185,350);
-
-    $scope.images.play_img.onload = function () {
-        $scope.canvas.ctx.drawImage($scope.images.play_img,300,260);
-    }
 
     $scope.actions = {
         createPlayer: function () {

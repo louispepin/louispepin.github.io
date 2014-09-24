@@ -1,12 +1,26 @@
 angular.module('snake', [])
-.controller('snakeCtrl', ['$scope', function($scope) {
+.controller('snakeCtrl', ['$scope', '$rootScope', '$modalInstance', function($scope, $rootScope, $modalInstance) {
 
-    $scope.canvas = {
-        c: document.getElementById("snake_board"),
-        ctx: null
-    };
+    $rootScope.$watch('snakeModalReady', function () {
+        $scope.canvas = {
+            c: document.getElementById("snake_board"),
+            ctx: null
+        };
+        $scope.canvas.ctx = $scope.canvas.c.getContext("2d");
 
-    $scope.canvas.ctx = $scope.canvas.c.getContext("2d");
+        // draw default canvas
+        $scope.canvas.ctx.textAlign = "center";
+        $scope.canvas.ctx.fillStyle = "#303030";
+        $scope.canvas.ctx.font = "50px droid sans";
+        $scope.canvas.ctx.fillText("SNAKE",250,150);
+        $scope.canvas.ctx.font = "35px droid sans";
+        $scope.canvas.ctx.fillText("CLICK", 190, 300);
+        $scope.canvas.ctx.fillText("TO PLAY",185,350);
+
+        $scope.images.play_img.onload = function () {
+            $scope.canvas.ctx.drawImage($scope.images.play_img,300,260);
+        }
+    });
 
     $scope.images = {
         head_right: new Image(),
@@ -46,19 +60,6 @@ angular.module('snake', [])
     $scope.timers = {
         yum_start: 0,
         yum_elapsed: 0
-    }
-
-    // draw default canvas
-    $scope.canvas.ctx.textAlign = "center";
-    $scope.canvas.ctx.fillStyle = "#303030";
-    $scope.canvas.ctx.font = "50px droid sans";
-    $scope.canvas.ctx.fillText("SNAKE",250,150);
-    $scope.canvas.ctx.font = "35px droid sans";
-    $scope.canvas.ctx.fillText("CLICK", 190, 300);
-    $scope.canvas.ctx.fillText("TO PLAY",185,350);
-
-    $scope.images.play_img.onload = function () {
-        $scope.canvas.ctx.drawImage($scope.images.play_img,300,260);
     }
 
     $scope.actions = {
@@ -545,4 +546,5 @@ angular.module('snake', [])
             }
         }
     };
+
 }]);
