@@ -873,7 +873,7 @@ angular.module('asteroid', [])
                 }
 
                 else if ($scope.controls.dead) {
-                    init();
+                    $scope.actions.init();
                 }
                 break;
         }
