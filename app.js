@@ -15,11 +15,11 @@ angular.module('app', [
             controller: 'gamesCtrl'
         })
         .when('/snake', {
-            templateUrl: 'modules/snake/snake.html',
+            templateUrl: 'modules/games/snake/snake.html',
             controller: 'snakeCtrl'
         })
         .when('/asteroid', {
-            templateUrl: 'modules/asteroid/asteroid.html',
+            templateUrl: 'modules/games/asteroid/asteroid.html',
             controller: 'asteroidCtrl'
         })
         .otherwise({

@@ -32,13 +32,13 @@ angular.module('snake', [])
         play_img: new Image()
     };
 
-    $scope.images.head_right.src = "modules/snake/images/face_right.png";
-    $scope.images.head_left.src = "modules/snake/images/face_left.png";
-    $scope.images.head_up.src = "modules/snake/images/face_up.png";
-    $scope.images.head_down.src = "modules/snake/images/face_down.png";
-    $scope.images.apple_img.src = "modules/snake/images/apple.png";
-    $scope.images.arrow_img.src = "modules/snake/images/arrow.png";
-    $scope.images.play_img.src = "modules/snake/images/play.png";
+    $scope.images.head_right.src = "modules/games/snake/images/face_right.png";
+    $scope.images.head_left.src = "modules/games/snake/images/face_left.png";
+    $scope.images.head_up.src = "modules/games/snake/images/face_up.png";
+    $scope.images.head_down.src = "modules/games/snake/images/face_down.png";
+    $scope.images.apple_img.src = "modules/games/snake/images/apple.png";
+    $scope.images.arrow_img.src = "modules/games/snake/images/arrow.png";
+    $scope.images.play_img.src = "modules/games/snake/images/play.png";
 
     $scope.controls = {
         game_started: false,

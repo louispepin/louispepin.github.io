@@ -82,17 +82,17 @@ angular.module('asteroid', [])
         play_img: new Image()
     };
 
-    $scope.images.ship_img.src = "modules/asteroid/images/ship_up.png";
-    $scope.images.ship_left.src = "modules/asteroid/images/ship_left.png";
-    $scope.images.ship_right.src = "modules/asteroid/images/ship_right.png";
-    $scope.images.ship_up.src = "modules/asteroid/images/ship_up.png";
-    $scope.images.ship_down.src = "modules/asteroid/images/ship_down.png";
-    $scope.images.asteroid_big_img.src = "modules/asteroid/images/asteroid_big.png";
-    $scope.images.asteroid_small_img.src = "modules/asteroid/images/asteroid_small.png";
-    $scope.images.arrow_img.src = "modules/asteroid/images/arrow.png";
-    $scope.images.life_img.src = "modules/asteroid/images/ship_up.png";
-    $scope.images.explosion_img.src = "modules/asteroid/images/explosion.png";
-    $scope.images.play_img.src = "modules/asteroid/images/play.png";
+    $scope.images.ship_img.src = "modules/games/asteroid/images/ship_up.png";
+    $scope.images.ship_left.src = "modules/games/asteroid/images/ship_left.png";
+    $scope.images.ship_right.src = "modules/games/asteroid/images/ship_right.png";
+    $scope.images.ship_up.src = "modules/games/asteroid/images/ship_up.png";
+    $scope.images.ship_down.src = "modules/games/asteroid/images/ship_down.png";
+    $scope.images.asteroid_big_img.src = "modules/games/asteroid/images/asteroid_big.png";
+    $scope.images.asteroid_small_img.src = "modules/games/asteroid/images/asteroid_small.png";
+    $scope.images.arrow_img.src = "modules/games/asteroid/images/arrow.png";
+    $scope.images.life_img.src = "modules/games/asteroid/images/ship_up.png";
+    $scope.images.explosion_img.src = "modules/games/asteroid/images/explosion.png";
+    $scope.images.play_img.src = "modules/games/asteroid/images/play.png";
 
     $scope.actions = {
         createPlayer: function () {
@@ -382,7 +382,6 @@ angular.module('asteroid', [])
                 }
 
                 // lives
-                $scope.images.life_img.src = "modules/asteroid/images/ship_up.png";
                 for (i=0; i<$scope.controls.lives; i++) {
                     $scope.canvas.ctx.drawImage($scope.images.life_img, 25*(18-i),5);
                 }
@@ -711,6 +710,9 @@ angular.module('asteroid', [])
     window.onkeydown = function (evt) {
         evt = evt || window.event;
         evt.preventDefault();
+
+        if ($scope.controls.cutscene)
+            return;
 
         switch(evt.keycode || evt.which) {
 

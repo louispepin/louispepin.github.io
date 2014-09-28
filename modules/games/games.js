@@ -3,7 +3,7 @@ angular.module('games', ['snake', 'asteroid'])
     $scope.actions = {
         openSnake: function () {
             var modalInstance = $modal.open({
-                templateUrl: 'modules/snake/snake.html',
+                templateUrl: 'modules/games/snake/snake.html',
                 controller: 'snakeCtrl',
                 size: 'lg'
             })
@@ -18,7 +18,7 @@ angular.module('games', ['snake', 'asteroid'])
         },
         openAsteroid: function () {
             var modalInstance = $modal.open({
-                templateUrl: 'modules/asteroid/asteroid.html',
+                templateUrl: 'modules/games/asteroid/asteroid.html',
                 controller: 'asteroidCtrl',
                 size: 'lg'
             })
