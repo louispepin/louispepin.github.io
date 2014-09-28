@@ -407,8 +407,10 @@ angular.module('asteroid', [])
 
         update: function () {
             var now = new Date().getTime();
-            if ($scope.controls.lives == -1)
+            if ($scope.controls.lives == -1) {
                 $scope.controls.dead = true;
+                $scope.actions.pauseGame();
+            }
 
             // end invincibility after 2 seconds
             if ($scope.controls.invincible) {
@@ -714,7 +716,7 @@ angular.module('asteroid', [])
 
             // letter h
             case 72:
-                if (!$scope.controls.menu && $scope.controls.pause) {
+                if (!$scope.controls.menu && !$scope.controls.dead && $scope.controls.pause) {
                     $scope.actions.unpauseGame();
                 }
 
@@ -727,7 +729,7 @@ angular.module('asteroid', [])
 
             // left arrow
             case 37:
-                if (!$scope.controls.menu && $scope.controls.pause) {
+                if (!$scope.controls.menu && !$scope.controls.dead && $scope.controls.pause) {
                     $scope.actions.unpauseGame();
                 }
 
@@ -746,7 +748,7 @@ angular.module('asteroid', [])
                 }
 
                 else {
-                    if ($scope.controls.pause) {
+                    if (!$scope.controls.dead && $scope.controls.pause) {
                         $scope.actions.unpauseGame();
                     }
                     $scope.controls.ship_orientation = "down";
@@ -764,7 +766,7 @@ angular.module('asteroid', [])
                     $scope.controls.menu_selected = $scope.controls.menu_selected % 2;
                 }
                 else {
-                    if ($scope.controls.pause) {
+                    if (!$scope.controls.dead && $scope.controls.pause) {
                         $scope.actions.unpauseGame();
                     }
 
@@ -783,7 +785,7 @@ angular.module('asteroid', [])
                     $scope.controls.menu_selected = $scope.controls.menu_selected % 2;
                 }
                 else {
-                    if ($scope.controls.pause) {
+                    if (!$scope.controls.dead && $scope.controls.pause) {
                         $scope.actions.unpauseGame();
                     }
                     $scope.controls.ship_orientation = "up";
@@ -801,7 +803,7 @@ angular.module('asteroid', [])
                     $scope.controls.menu_selected = $scope.controls.menu_selected % 2;
                 }
                 else {
-                    if ($scope.controls.pause) {
+                    if (!$scope.controls.dead && $scope.controls.pause) {
                         $scope.actions.unpauseGame();
                     }
                     $scope.controls.ship_orientation = "up";
@@ -814,7 +816,7 @@ angular.module('asteroid', [])
 
             // letter l
             case 76:
-                if (!$scope.controls.menu && $scope.controls.pause) {
+                if (!$scope.controls.menu && !$scope.controls.dead && $scope.controls.pause) {
                     $scope.actions.unpauseGame();
                 }
                 $scope.controls.ship_orientation = "right";
@@ -826,7 +828,7 @@ angular.module('asteroid', [])
 
             // right arrow
             case 39:
-                if (!$scope.controls.menu && $scope.controls.pause) {
+                if (!$scope.controls.menu && !$scope.controls.dead && $scope.controls.pause) {
                     $scope.actions.unpauseGame();
                 }
                 $scope.controls.ship_orientation = "right";
@@ -838,7 +840,7 @@ angular.module('asteroid', [])
 
             // spacebar
             case 32:
-                if ($scope.controls.pause) {
+                if (!$scope.controls.dead && $scope.controls.pause) {
                     $scope.actions.unpauseGame();
                 }
                 $scope.controls.shooting = true;
@@ -846,7 +848,7 @@ angular.module('asteroid', [])
 
             // letter p
             case 80:
-                if ($scope.controls.pause) {
+                if (!$scope.controls.dead && $scope.controls.pause) {
                     $scope.actions.unpauseGame();
                 }
                 else {
