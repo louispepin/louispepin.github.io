@@ -680,16 +680,12 @@ angular.module('asteroid', [])
         },
 
         animate: function () {
-            var now = new Date().getTime();
-            if (now - $scope.last_frame > 1000/60) {
-                if (!$scope.controls.pause) {
-                    $scope.actions.update();
-                    $scope.actions.collisions();
-                }
-
-                $scope.actions.draw();
-                $scope.last_frame = now;
+            if (!$scope.controls.pause) {
+                $scope.actions.update();
+                $scope.actions.collisions();
             }
+
+            $scope.actions.draw();
             window.requestAnimationFrame($scope.actions.animate);
         },
 

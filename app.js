@@ -2,7 +2,8 @@ angular.module('app', [
     'ui.bootstrap',
     'ngRoute',
     'home',
-    'games'
+    'games',
+    'euler'
 ])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -14,13 +15,9 @@ angular.module('app', [
             templateUrl: 'modules/games/games.html',
             controller: 'gamesCtrl'
         })
-        .when('/snake', {
-            templateUrl: 'modules/games/snake/snake.html',
-            controller: 'snakeCtrl'
-        })
-        .when('/asteroid', {
-            templateUrl: 'modules/games/asteroid/asteroid.html',
-            controller: 'asteroidCtrl'
+        .when('/euler', {
+            templateUrl: 'modules/euler/euler.html',
+            controller: 'eulerCtrl'
         })
         .otherwise({
             redirectTo: '/home'

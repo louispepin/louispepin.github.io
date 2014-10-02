@@ -5,6 +5,7 @@ angular.module('games', ['snake', 'asteroid'])
             var modalInstance = $modal.open({
                 templateUrl: 'modules/games/snake/snake.html',
                 controller: 'snakeCtrl',
+                backdrop: 'static',
                 size: 'lg'
             })
 
@@ -20,6 +21,7 @@ angular.module('games', ['snake', 'asteroid'])
             var modalInstance = $modal.open({
                 templateUrl: 'modules/games/asteroid/asteroid.html',
                 controller: 'asteroidCtrl',
+                backdrop: 'static',
                 size: 'lg'
             })
 
