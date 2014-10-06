@@ -40,6 +40,20 @@ p {
     padding-top: 60px;
 }
 
+.description {
+    margin-top: 40px;
+}
+
+.box {
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.source {
+    font-family: "Droid Sans Mono";
+    font-size: 13px;
+}
+
 #snake_board {
     width: 500px;
     height: 500px;

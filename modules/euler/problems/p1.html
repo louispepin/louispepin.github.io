@@ -1,0 +1,19 @@
+<div class="content">
+
+    <h2>Project Euler: Problem 1</h2>
+
+    <p class="description">This is a description.</p>
+
+    <pre class="box"><code class="source">
+    var sum = 0;
+    for (var i = 1; i < 1000; i++) {
+        if (i % 3 == 0 || i % 5 == 0)
+            sum += i;
+    }
+    </code></pre>
+
+    <button class="btn btn-success" ng-click="toggleAnswer()">Show/Hide Result</button>
+
+    <h3 ng-show="showAnswer">{{result}}</h3>
+
+</div>
