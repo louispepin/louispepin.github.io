@@ -29,7 +29,7 @@
     padding-left: 3px;
     padding-right: 3px;
     border: 2px solid white;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 .link a:hover {
@@ -40,7 +40,7 @@
     padding-left: 3px;
     padding-right: 3px;
     border: 2px solid white;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 .page {

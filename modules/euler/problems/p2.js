@@ -1,5 +1,10 @@
 angular.module('eulerP2', [])
-    .controller('eulerP2Ctrl', ['$scope', '$rootScope', '$modal', function($scope, $rootScope, $modal) {
+.controller('eulerP2Ctrl', ['$scope', '$rootScope', '$modal', function($scope, $rootScope, $modal) {
+
+    $scope.showAnswer = false;
+
+    $scope.calculate = function () {
+        var start = new Date().getTime();
         var sum = 0;
 
         var prev = 1;
@@ -15,9 +20,8 @@ angular.module('eulerP2', [])
             current = next;
         }
 
+        $scope.time = new Date().getTime() - start;
         $scope.result = sum;
-        $scope.showAnswer = false;
-        $scope.toggleAnswer = function () {
-            $scope.showAnswer = !$scope.showAnswer;
-        }
-    }]);
+        $scope.showAnswer = true;
+    };
+}]);

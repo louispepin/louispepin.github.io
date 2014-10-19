@@ -8,10 +8,26 @@
     </p>
 
     <pre class="box"><code class="source">
+    var largeNumber = 600851475143;
+    var biggestPrime = 2;
+
+    for (var i = 2; i * i < largeNumber; i++) {
+        if (largeNumber % i == 0) {
+            var prime = true;
+            for (var j = 2; j * j < i; j++) {
+                if (i % j == 0)
+                    prime = false;
+            }
+
+            if (prime && i > biggestPrime)
+                biggestPrime = i;
+        }
+    }
     </code></pre>
 
-    <button class="btn btn-success" ng-click="toggleAnswer()">Show/Hide Result</button>
+    <button class="btn btn-success" ng-click="calculate()">Calculate</button>
 
     <h3 ng-show="showAnswer">{{result}}</h3>
+    <p ng-show="showAnswer">Calculated in {{time}}ms</p>
 
 </div>
