@@ -17,8 +17,9 @@
     font-size: 17px;
     color: white;
     list-style-type: none;
-    margin: 5px;
     float: left;
+    padding: 5px;
+    margin-left: 15px;
 }
 
 .links {
