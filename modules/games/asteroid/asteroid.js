@@ -11,9 +11,9 @@ angular.module('asteroid', [])
         // draw default canvas
         $scope.canvas.ctx.textAlign = "center";
         $scope.canvas.ctx.fillStyle = "#303030";
-        $scope.canvas.ctx.font = "50px droid sans";
+        $scope.canvas.ctx.font = "50px oxygen";
         $scope.canvas.ctx.fillText("ASTEROID",250,150);
-        $scope.canvas.ctx.font = "35px droid sans";
+        $scope.canvas.ctx.font = "35px oxygen";
         $scope.canvas.ctx.fillText("CLICK",190,300);
         $scope.canvas.ctx.fillText("TO PLAY",185,350);
 
@@ -191,13 +191,13 @@ angular.module('asteroid', [])
             // title
             $scope.canvas.ctx.textAlign = "center";
             $scope.canvas.ctx.fillStyle = "#303030";
-            $scope.canvas.ctx.font = "50px droid sans";
+            $scope.canvas.ctx.font = "50px oxygen";
             $scope.canvas.ctx.fillText("SELECT MODE",250,100);
 
             // options
             $scope.canvas.ctx.textAlign = "start";
             $scope.canvas.ctx.fillStyle = "#606060";
-            $scope.canvas.ctx.font = "35px droid sans";
+            $scope.canvas.ctx.font = "35px oxygen";
             $scope.canvas.ctx.fillText("Adventure",175,225);
             $scope.canvas.ctx.fillText("Survival",175,275);
 
@@ -250,12 +250,12 @@ angular.module('asteroid', [])
 
             $scope.canvas.ctx.fillStyle = "#303030";
             $scope.canvas.ctx.textAlign = "center";
-            $scope.canvas.ctx.font = "50px Droid Sans";
+            $scope.canvas.ctx.font = "50px oxygen";
             $scope.canvas.ctx.fillText("GAME OVER",250,100);
 
             if ($scope.controls.survival) {
                 $scope.canvas.ctx.fillStyle = "#606060";
-                $scope.canvas.ctx.font = "35px Droid Sans";
+                $scope.canvas.ctx.font = "35px oxygen";
                 $scope.canvas.ctx.fillText("YOUR FINAL SCORE",250,225);
                 $scope.canvas.ctx.fillStyle = "#303030";
                 $scope.canvas.ctx.fillText($scope.controls.score,250,275);
@@ -266,7 +266,7 @@ angular.module('asteroid', [])
 
             else {
                 $scope.canvas.ctx.fillStyle = "#606060";
-                $scope.canvas.ctx.font = "35px Droid Sans";
+                $scope.canvas.ctx.font = "35px oxygen";
                 $scope.canvas.ctx.fillText("YOU DIED AT LEVEL",250,225);
                 $scope.canvas.ctx.fillStyle = "#303030";
                 $scope.canvas.ctx.fillText($scope.controls.level,250,275);
@@ -281,7 +281,7 @@ angular.module('asteroid', [])
             $scope.canvas.ctx.fillRect(0, 0, 500, 500);
             $scope.canvas.ctx.textAlign = "center";
             $scope.canvas.ctx.fillStyle = "#303030";
-            $scope.canvas.ctx.font = "50px Droid Sans";
+            $scope.canvas.ctx.font = "50px oxygen";
             $scope.canvas.ctx.fillText("Level " + $scope.controls.level, 250, 250);
         },
 
@@ -355,7 +355,7 @@ angular.module('asteroid', [])
                 // score
                 $scope.canvas.ctx.textAlign = "start";
                 $scope.canvas.ctx.fillStyle = "#606060";
-                $scope.canvas.ctx.font = "20px droid sans";
+                $scope.canvas.ctx.font = "20px oxygen";
 
                 if ($scope.controls.survival)
                     $scope.canvas.ctx.fillText("Score: " + $scope.controls.score,5,25);
@@ -390,7 +390,7 @@ angular.module('asteroid', [])
                 if ($scope.controls.pause) {
                     $scope.canvas.ctx.textAlign = "center";
                     $scope.canvas.ctx.fillStyle = "#606060";
-                    $scope.canvas.ctx.font = "50px droid sans";
+                    $scope.canvas.ctx.font = "50px oxygen";
                     $scope.canvas.ctx.fillText("Pause",250,275);
                 }
 
@@ -398,7 +398,7 @@ angular.module('asteroid', [])
                 if (new Date().getTime() - $scope.timers.powerup_start <= 1000) {
                     $scope.canvas.ctx.textAlign = "center";
                     $scope.canvas.ctx.fillStyle = "#606060";
-                    $scope.canvas.ctx.font = "50px droid sans";
+                    $scope.canvas.ctx.font = "50px oxygen";
                     $scope.canvas.ctx.fillText("POWER UP!",250,275);
                 }
             }
@@ -460,20 +460,20 @@ angular.module('asteroid', [])
 
             // set speed according to movement control variables
             if ($scope.controls.moving_right) {
-                $scope.player.speedX_ = 5;
+                $scope.player.speedX_ = 4;
                 $scope.player.speedY_ = 0;
             }
             else if ($scope.controls.moving_left) {
-                $scope.player.speedX_ = -5;
+                $scope.player.speedX_ = -4;
                 $scope.player.speedY_ = 0;
             }
             else if ($scope.controls.moving_up) {
                 $scope.player.speedX_ = 0;
-                $scope.player.speedY_ = 5;
+                $scope.player.speedY_ = 4;
             }
             else if ($scope.controls.moving_down) {
                 $scope.player.speedX_ = 0;
-                $scope.player.speedY_ = -5;
+                $scope.player.speedY_ = -4;
             }
             else {
                 $scope.player.speedX_ = 0;

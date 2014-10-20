@@ -11,9 +11,9 @@ angular.module('snake', [])
         // draw default canvas
         $scope.canvas.ctx.textAlign = "center";
         $scope.canvas.ctx.fillStyle = "#303030";
-        $scope.canvas.ctx.font = "50px droid sans";
+        $scope.canvas.ctx.font = "50px oxygen";
         $scope.canvas.ctx.fillText("SNAKE",250,150);
-        $scope.canvas.ctx.font = "35px droid sans";
+        $scope.canvas.ctx.font = "35px oxygen";
         $scope.canvas.ctx.fillText("CLICK", 190, 300);
         $scope.canvas.ctx.fillText("TO PLAY",185,350);
 
@@ -120,13 +120,13 @@ angular.module('snake', [])
             // title
             $scope.canvas.ctx.textAlign = "start";
             $scope.canvas.ctx.fillStyle = "#303030";
-            $scope.canvas.ctx.font = "50px droid sans";
+            $scope.canvas.ctx.font = "50px oxygen";
             $scope.canvas.ctx.fillText("SELECT SPEED", 100, 75);
 
 
             // options
             $scope.canvas.ctx.fillStyle = "#606060";
-            $scope.canvas.ctx.font = "35px droid sans";
+            $scope.canvas.ctx.font = "35px oxygen";
             $scope.canvas.ctx.fillText("SLOW", 150, 200);
             $scope.canvas.ctx.fillText("AVERAGE", 150, 250);
             $scope.canvas.ctx.fillText("FAST", 150, 300);
@@ -161,11 +161,11 @@ angular.module('snake', [])
 
             $scope.canvas.ctx.fillStyle = "#303030";
             $scope.canvas.ctx.textAlign = "center";
-            $scope.canvas.ctx.font = "50px Droid Sans";
+            $scope.canvas.ctx.font = "50px oxygen";
             $scope.canvas.ctx.fillText("GAME OVER", 250, 100);
 
             $scope.canvas.ctx.fillStyle = "#606060";
-            $scope.canvas.ctx.font = "35px Droid Sans";
+            $scope.canvas.ctx.font = "35px oxygen";
             $scope.canvas.ctx.fillText("YOUR FINAL SCORE", 250, 225);
             $scope.canvas.ctx.fillStyle = "#303030";
             $scope.canvas.ctx.fillText($scope.controls.score, 250, 275);
@@ -240,13 +240,13 @@ angular.module('snake', [])
                 // score
                 $scope.canvas.ctx.textAlign = "center";
                 $scope.canvas.ctx.fillStyle = "#606060";
-                $scope.canvas.ctx.font = "20px droid sans";
+                $scope.canvas.ctx.font = "20px oxygen";
                 $scope.canvas.ctx.fillText("Score: " + $scope.controls.score, 250, 25);
 
                 // pause message
                 if ($scope.controls.pause) {
                     $scope.canvas.ctx.fillStyle = "#606060";
-                    $scope.canvas.ctx.font = "50px droid sans";
+                    $scope.canvas.ctx.font = "50px oxygen";
                     $scope.canvas.ctx.fillText("PAUSE", 250, 250);
                 }
 
@@ -254,7 +254,7 @@ angular.module('snake', [])
                 $scope.timers.yum_elapsed = new Date().getTime() - $scope.timers.yum_start;
                 if ($scope.timers.yum_elapsed <= 1000) {
                     $scope.canvas.ctx.fillStyle = "#606060";
-                    $scope.canvas.ctx.font = "50px droid sans";
+                    $scope.canvas.ctx.font = "50px oxygen";
                     $scope.canvas.ctx.fillText("YUM!", 250, 250);
                 }
             }

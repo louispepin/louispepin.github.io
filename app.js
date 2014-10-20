@@ -31,6 +31,10 @@ angular.module('app', [
             templateUrl: 'modules/euler/problems/p3.html',
             controller: 'eulerP3Ctrl'
         })
+        .when('/euler/p4', {
+            templateUrl: 'modules/euler/problems/p4.html',
+            controller: 'eulerP4Ctrl'
+        })
         .otherwise({
             redirectTo: '/home'
         });

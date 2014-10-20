@@ -1,0 +1,42 @@
+<div class="content">
+
+    <h3>Problem 4: Largest palindrome product</h3>
+
+    <p class="description">
+        A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit
+        numbers is 9009 = 91 × 99. <br/>
+        Find the largest palindrome made from the product of two 3-digit numbers.
+    </p>
+
+    <pre class="box"><code class="source">
+    var isPalindrome = function (num) {
+        var string = num.toString();
+        for (var i = 0; i < string.length/2; i++) {
+            if (string[i] != string[string.length - i - 1])
+                return false;
+        }
+
+        return true;
+    }
+
+    var currentLargest = 0;
+    for (var i = 999; i > 100; i--) {
+        for (var j = 999; j > 100; j--) {
+            var product = i * j;
+            if (product < currentLargest)
+                break;
+
+            if (isPalindrome(product) && product > currentLargest)
+                currentLargest = product;
+        }
+    }
+
+    return currentLargest;
+    </code></pre>
+
+    <button class="btn btn-success" ng-click="calculate()">Calculate</button>
+
+    <h3 ng-show="showAnswer">{{result}}</h3>
+    <p ng-show="showAnswer">Calculated in {{time}}ms</p>
+
+</div>

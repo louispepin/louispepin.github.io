@@ -11,7 +11,6 @@ angular.module('eulerP2', [])
         var current = 1;
 
         while (current < 4000000) {
-
             if (current % 2 == 0)
                 sum += current;
 

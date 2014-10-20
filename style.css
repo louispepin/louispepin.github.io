@@ -14,7 +14,7 @@
 }
 
 .title {
-    font-size: 20px;
+    font-size: 17px;
     color: white;
     list-style-type: none;
     margin: 5px;
@@ -64,10 +64,12 @@
     left: 50%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: -50px;
 }
 
 .content {
     padding-top: 60px;
+    margin: 30px;
 }
 
 .description {
@@ -80,8 +82,15 @@
 }
 
 .source {
-    font-family: "Droid Sans Mono";
+    font-family: "Droid Sans Mono", ;
     font-size: 13px;
+}
+
+.preview {
+    float: left;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
 }
 
 #snake_board {
@@ -89,8 +98,6 @@
     height: 500px;
     border: 5px solid #404040;
     border-radius: 25px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 #asteroid_board {
@@ -98,6 +105,4 @@
     height: 500px;
     border: 5px solid #404040;
     border-radius: 25px;
-	margin-left: auto;
-	margin-right: auto;
 }
