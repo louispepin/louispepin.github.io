@@ -31,26 +31,19 @@
         <script src="modules/euler/problems/p2.js"></script>
         <script src="modules/euler/problems/p3.js"></script>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="menu span12">
-                    <div class="items">
-                        <ul class="title">
-                            <li><img src="images/noel_squared.jpg" style="height: 40px; width: 40px;">Louis Pepin</li>
-                        </ul>
-                        <ul class="links">
-                            <li class="link"><a href="#/games">Games</a></li>
-                            <li class="link"><a href="#/euler">Euler</a></li>
-                            <li class="link"><a href="#/home">Home</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="page span3" ng-view></div>
+        <div class="menu">
+            <div class="items">
+                <ul class="title">
+                    <li><img src="images/noel_squared.jpg" style="height: 40px; width: 40px;">Louis Pepin</li>
+                </ul>
+                <ul class="links">
+                    <li class="link"><a href="#/games">Games</a></li>
+                    <li class="link"><a href="#/euler">Euler</a></li>
+                    <li class="link"><a href="#/home">Home</a></li>
+                </ul>
             </div>
         </div>
 
+        <div class="page" ng-view></div>
 	</body>
 </html>
