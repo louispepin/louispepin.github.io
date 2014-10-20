@@ -1,5 +1,8 @@
 angular.module('games', ['snake', 'asteroid'])
 .controller('gamesCtrl', ['$scope', '$rootScope', '$modal', function($scope, $rootScope, $modal) {
+
+    document.title = "Games";
+
     $scope.actions = {
         openSnake: function () {
             var modalInstance = $modal.open({

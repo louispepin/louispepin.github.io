@@ -6,15 +6,20 @@
 
 		<link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Erica+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ranchers' rel='stylesheet' type='text/css'>
 	</head>
 
-	<body ng-app="app">
+	<body ng-app="app" style="font-family: 'Oxygen', sans-serif;">
 
         <script src="lib/js/angular.js"></script>
         <script src="lib/js/angular-route.js"></script>
         <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
 
         <script src="app.js"></script>
+
+        <script src="modules/home/home.js"></script>
 
         <script src="modules/games/games.js"></script>
         <script src="modules/games/snake/snake.js"></script>
@@ -27,10 +32,13 @@
 
         <div class="menu">
             <div class="items">
-                <ul>
-                    <li class="link"><img src="images/noel_squared.jpg" style="height: 40px; width: 40px;">Louis Pepin</li>
-                    <li class="link"><a href="#/euler">Euler</a></li>
+                <ul class="title">
+                    <li><img src="images/noel_squared.jpg" style="height: 40px; width: 40px;">Louis Pepin</li>
+                </ul>
+                <ul class="links">
                     <li class="link"><a href="#/games">Games</a></li>
+                    <li class="link"><a href="#/euler">Euler</a></li>
+                    <li class="link"><a href="#/home">Home</a></li>
                 </ul>
             </div>
         </div>
