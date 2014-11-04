@@ -5,23 +5,35 @@ angular.module('eulerP3', [])
 
     $scope.calculate = function () {
         var start = new Date().getTime();
+
+        var isPrime = function (x) {
+            var prime = true;
+            for (var i = 2; i * i <= x; i++) {
+                if (x % i == 0)
+                    prime = false;
+            }
+
+            return prime;
+        }
+
         var largeNumber = 600851475143;
-        var biggestPrime = 2;
+        var primeDivisor = 2;
 
-        for (var i = 2; i * i < largeNumber; i++) {
-            if (largeNumber % i == 0) {
-                var prime = true;
-                for (var j = 2; j * j < i; j++) {
-                    if (i % j == 0)
-                        prime = false;
+        // divide by smallest divisible prime until the smallest divisble prime is itself
+        while (largeNumber != primeDivisor) {
+            if (largeNumber % primeDivisor == 0) {
+                largeNumber = largeNumber / primeDivisor;
+                primeDivisor = 2;
+            }
+            else {
+                primeDivisor++;
+                while (!isPrime(primeDivisor)) {
+                    primeDivisor++;
                 }
-
-                if (prime && i > biggestPrime)
-                    biggestPrime = i;
             }
         }
 
-        $scope.result = biggestPrime;
+        $scope.result = largeNumber;
         $scope.time = new Date().getTime() - start;
         $scope.showAnswer = true;
     };
