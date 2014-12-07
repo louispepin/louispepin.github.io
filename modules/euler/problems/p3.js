@@ -19,12 +19,14 @@ angular.module('eulerP3', [])
         var largeNumber = 600851475143;
         var primeDivisor = 2;
 
-        // divide by smallest divisible prime until the smallest divisble prime is itself
+        // divide by smallest divisible prime until the smallest divisble prime is the number itself
         while (largeNumber != primeDivisor) {
+
             if (largeNumber % primeDivisor == 0) {
                 largeNumber = largeNumber / primeDivisor;
                 primeDivisor = 2;
             }
+
             else {
                 primeDivisor++;
                 while (!isPrime(primeDivisor)) {

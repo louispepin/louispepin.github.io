@@ -1,0 +1,33 @@
+<div class="content">
+
+    <h3>Problem 5: Smallest Multiple</h3>
+
+    <p class="description">
+        2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder. <br/>
+        What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+    </p>
+
+    <pre class="box"><code class="source">
+    var num = 0;
+    var found = false;
+
+    // brute force, increment by 20 to save some time
+    while(!found) {
+        num += 20;
+        found = true;
+
+        for (var i = 1; i <= 20; i++) {
+            if (num % i != 0)
+                found = false;
+        }
+    }
+
+    return num;
+    </code></pre>
+
+    <button class="btn btn-success" ng-click="calculate()">Calculate</button>
+
+    <h3 ng-show="showAnswer">{{result}}</h3>
+    <p ng-show="showAnswer">Calculated in {{time}}ms</p>
+
+</div>
