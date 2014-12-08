@@ -310,6 +310,14 @@ angular.module('snake', [])
                 $scope.actions.spawnApple();
                 $scope.controls.score++;
 
+                // augment speed
+                $scope.controls.game_speed -= 0.5;
+
+                clearInterval($scope.controls.interval_handle);
+                $scope.controls.interval_handle = setInterval(function () {
+                    $scope.actions.update();
+                    $scope.actions.draw();
+                }, $scope.controls.game_speed);
             }
         },
 
