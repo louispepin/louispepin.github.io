@@ -15,6 +15,14 @@ angular.module('app', [
             templateUrl: 'modules/games/games.html',
             controller: 'gamesCtrl'
         })
+        .when('/games/snake', {
+            templateUrl: 'modules/games/snake/snake.html',
+            controller: 'snakeCtrl'
+        })
+        .when('/games/asteroid', {
+            templateUrl: 'modules/games/asteroid/asteroid.html',
+            controller: 'asteroidCtrl'
+        })
         .when('/euler', {
             templateUrl: 'modules/euler/euler.html',
             controller: 'eulerCtrl'
@@ -42,6 +50,10 @@ angular.module('app', [
         .when('/euler/p6', {
             templateUrl: 'modules/euler/problems/p6.html',
             controller: 'eulerP6Ctrl'
+        })
+        .when('/euler/p7', {
+            templateUrl: 'modules/euler/problems/p7.html',
+            controller: 'eulerP7Ctrl'
         })
         .otherwise({
             redirectTo: '/home'

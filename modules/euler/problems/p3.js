@@ -14,7 +14,7 @@ angular.module('eulerP3', [])
             }
 
             return prime;
-        }
+        };
 
         var largeNumber = 600851475143;
         var primeDivisor = 2;

@@ -1,41 +1,5 @@
 angular.module('games', ['snake', 'asteroid'])
-.controller('gamesCtrl', ['$scope', '$rootScope', '$modal', function($scope, $rootScope, $modal) {
-
+.controller('gamesCtrl', ['$scope', '$rootScope', function($scope, $rootScope, $modal) {
     document.title = "Games";
-
-    $scope.actions = {
-        openSnake: function () {
-            var modalInstance = $modal.open({
-                templateUrl: 'modules/games/snake/snake.html',
-                controller: 'snakeCtrl',
-                backdrop: 'static',
-                size: 'lg'
-            })
-
-            $rootScope.snakeModalReady = false;
-            modalInstance.opened.then(function() {
-                $rootScope.snakeModalReady = true;
-            });
-            modalInstance.result.then(function () {
-                $rootScope.snakeModalReady = false;
-            });
-        },
-        openAsteroid: function () {
-            var modalInstance = $modal.open({
-                templateUrl: 'modules/games/asteroid/asteroid.html',
-                controller: 'asteroidCtrl',
-                backdrop: 'static',
-                size: 'lg'
-            })
-
-            $rootScope.asteroidModalReady = false;
-            modalInstance.opened.then(function() {
-                $rootScope.asteroidModalReady = true;
-            });
-            modalInstance.result.then(function () {
-                $rootScope.asteroidModalReady = false;
-            });
-        }
-    };
 }]);
 

@@ -1,5 +1,7 @@
 angular.module('snake', [])
-.controller('snakeCtrl', ['$scope', '$rootScope', '$modalInstance', function($scope, $rootScope, $modalInstance) {
+.controller('snakeCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+
+    document.title = "Snake";
 
     $rootScope.$watch('snakeModalReady', function () {
         $scope.canvas = {
@@ -196,7 +198,7 @@ angular.module('snake', [])
 
                 // snake's body except for head and tail
                 $scope.canvas.ctx.fillStyle = "#303030";
-                for (i = 1; i < $scope.controls.snake.length - 1; ++i) {
+                for (var i = 1; i < $scope.controls.snake.length - 1; ++i) {
                     $scope.canvas.ctx.fillRect(25 * $scope.controls.snake[i].x, 25 * $scope.controls.snake[i].y, 25, 25);
                 }
 

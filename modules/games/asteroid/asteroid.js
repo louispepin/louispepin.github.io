@@ -1,5 +1,7 @@
 angular.module('asteroid', [])
-.controller('asteroidCtrl', ['$scope', '$rootScope', '$modalInstance', function($scope, $rootScope, $modalInstance) {
+.controller('asteroidCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+
+    document.title = "Asteroid";
 
     $rootScope.$watch('asteroidModalReady', function () {
         $scope.canvas = {
