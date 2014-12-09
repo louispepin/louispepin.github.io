@@ -1,6 +1,7 @@
 angular.module('eulerP9', [])
-.controller('eulerP9Ctrl', ['$scope', '$rootScope', '$modal', function($scope, $rootScope, $modal) {
+.controller('eulerP9Ctrl', ['$scope', function($scope) {
 
+    document.title = "Problem 9";
     $scope.showAnswer = false;
 
     $scope.calculate = function () {
@@ -15,6 +16,7 @@ angular.module('eulerP9', [])
         var n = 1;
         var a = 0, b = 0, c = 0;
 
+        // try all combinations, m > n, until a + b + c = 1000 is found
         while (a + b + c != 1000) {
             m = n + 1;
             a = b = c = 0;

@@ -1,6 +1,7 @@
 angular.module('eulerP8', [])
-.controller('eulerP8Ctrl', ['$scope', '$rootScope', '$modal', function($scope, $rootScope, $modal) {
+.controller('eulerP8Ctrl', ['$scope', function($scope) {
 
+    document.title = "Problem 8";
     $scope.showAnswer = false;
 
     $scope.calculate = function () {
@@ -13,6 +14,7 @@ angular.module('eulerP8', [])
         var largestProduct = 0;
         var largestNums = [];
 
+        // multiply every 13 number sequence starting from beginning to end, save the greatest product
         while (currentIndex < 1000 - 13) {
             currentProd = 1;
             var nums = [];

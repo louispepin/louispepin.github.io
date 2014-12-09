@@ -7,7 +7,8 @@ angular.module('euler', [
     'eulerP6',
     'eulerP7',
     'eulerP8',
-    'eulerP9'
+    'eulerP9',
+    'eulerP10'
 ])
 
 .controller('eulerCtrl', ['$scope', '$rootScope', '$modal', function($scope, $rootScope, $modal) {

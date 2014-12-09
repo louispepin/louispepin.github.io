@@ -1,6 +1,7 @@
 angular.module('eulerP1', [])
-.controller('eulerP1Ctrl', ['$scope', '$rootScope', '$modal', function($scope, $rootScope, $modal) {
+.controller('eulerP1Ctrl', ['$scope', function($scope) {
 
+    document.title = "Problem 1";
     $scope.showAnswer = false;
 
     $scope.calculate = function() {
