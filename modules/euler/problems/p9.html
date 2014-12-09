@@ -1,0 +1,48 @@
+<div class="content">
+
+    <h3>Problem 9: Special Pythagorean triplet</h3>
+
+    <p class="description">
+        A Pythagorean triplet is a set of three natural numbers, a < b < c, for which, <br/><br/>
+
+        a^2 + b^2 = c^2 <br/>
+        For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2. <br/><br/>
+
+        There exists exactly one Pythagorean triplet for which a + b + c = 1000. <br/>
+        Find the product abc.
+    </p>
+
+    <pre class="box"><code class="source">
+    // Euclid's formula for generating Pythagorean triples:
+    // a = m^2 - n^2
+    // b = 2mn
+    // c = m^2 + n^2
+
+    var m = 2;
+    var n = 1;
+    var a = 0, b = 0, c = 0;
+
+    while (a + b + c != 1000) {
+        m = n + 1;
+        a = b = c = 0;
+
+        while (a + b + c < 1000) {
+            m++;
+
+            a = m*m - n*n;
+            b = 2*m*n;
+            c = m*m + n*n;
+        }
+
+        n++;
+    }
+
+    return a*b*c;
+    </code></pre>
+
+    <button class="btn btn-success" ng-click="calculate()">Calculate</button>
+
+    <h3 ng-show="showAnswer">{{result}}</h3>
+    <p ng-show="showAnswer">Calculated in {{time}}ms</p>
+
+</div>
