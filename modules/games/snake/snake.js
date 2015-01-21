@@ -83,6 +83,7 @@ angular.module('snake', [])
             var x = Math.floor(Math.random() * 20);
             var y = Math.floor(Math.random() * 20);
 
+            // TODO: add while(position non valide), nouvelle valeur de x,y
             for (var i = 0; i < $scope.controls.snake.length; ++i) {
                 if ($scope.controls.snake[i].x == x && $scope.controls.snake[i].y == y) {
                     $scope.actions.spawnApple();

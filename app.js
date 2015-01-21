@@ -3,7 +3,8 @@ angular.module('app', [
     'ngRoute',
     'home',
     'games',
-    'euler'
+    'euler',
+    'experience'
 ])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -66,6 +67,10 @@ angular.module('app', [
         .when('/euler/p10', {
             templateUrl: 'modules/euler/problems/p10.html',
             controller: 'eulerP10Ctrl'
+        })
+        .when('/experience', {
+            templateUrl: 'modules/experience/experience.html',
+            controller: 'experienceCtrl'
         })
         .otherwise({
             redirectTo: '/home'
